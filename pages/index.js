@@ -1,6 +1,5 @@
 import Landing from "../component/index/landing";
 import Service from "../component/index/service";
-
 export default function Home() {
   return (
     <>
@@ -8,4 +7,9 @@ export default function Home() {
       <Service />
     </>
   );
+}
+export async function getServerSideProps(cntx) {
+  return {
+    props: { data: "arash" },
+  };
 }
