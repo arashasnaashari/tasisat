@@ -1,5 +1,5 @@
-import Landing from "../component/index/landing";
-import Service from "../component/index/service";
+import Landing from "../components/index/landing";
+import Service from "../components/index/service";
 export default function Home() {
   return (
     <>
