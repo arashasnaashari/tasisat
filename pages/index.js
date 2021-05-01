@@ -1,27 +1,24 @@
-import dbConnect from "../utils/dbConnect";
-import Book from "../model/Book";
-export default function Home({ data }) {
+import SliderHot from "../component/index/slider";
+import Landing from "../component/index/landing";
+import Service from "../component/index/service";
+
+export default function Home({ hotbook }) {
   return (
     <>
-      <div className="w-full bg-gray-800 text-white h-screen">
-        <p className="text-2xl p-3 w-1/2 mx-auto">start point</p>
-        <div className="mx-auto w-1/2">
-          {JSON.parse(data).map((e) => {
-            return (
-              <h1 key={e._id} className="rounded-lg bg-gray-700 p-1 m-3">
-                {e.title}
-              </h1>
-            );
-          })}
-        </div>
-      </div>
+      <Landing />
+      <Service />
+      {/* <SliderHot data={hotbook} /> */}
     </>
   );
 }
-export async function getServerSideProps(cntx) {
-  await dbConnect();
-  const dataaaa = await Book.find({}).select({ title: 1 }).limit(10).lean();
-  return {
-    props: { data: JSON.stringify(dataaaa) },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const reshot = await fetch("https://bookgram.vercel.app/api/hotbook/0/8", {
+//     method: "GET",
+//     headers: { "Content-Type": "application/json" },
+//   });
+//   const hotbook = await reshot.json();
+
+//   return {
+//     props: { hotbook },
+//   };
+// }

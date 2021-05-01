@@ -2,50 +2,48 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: {
+  name: {
     type: String,
     required: true,
   },
-  password: {
+  image: {
     type: String,
     required: true,
   },
-  phone: {
+  about: {
     type: String,
     required: true,
   },
-  role: {
+  info: {
     type: String,
     required: true,
   },
-  product_orders: [
+  category: {
+    type: String,
+    required: true,
+  },
+  questions: {
+    type: String,
+    required: true,
+  },
+  faq: {
+    type: String,
+    required: true,
+  },
+  comments: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Product_orders",
+      ref: "Service_comments",
     },
   ],
-  service_orders: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Service_orders",
-    },
-  ],
-  bedehi: {
-    type: Number,
-    required: true,
-  },
-  talab: {
-    type: Number,
-    required: true,
-  },
 });
 
 var User;
 
 if (mongoose.models && mongoose.models.User) {
-  User = mongoose.model("User");
+  User = mongoose.model("Service");
 } else {
-  User = mongoose.model("User", userSchema);
+  User = mongoose.model("Service", userSchema);
 }
 
 module.exports = User;

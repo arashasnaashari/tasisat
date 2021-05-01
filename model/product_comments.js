@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const viewsSchema = new Schema({
-  text: {
-    type: String,
-    required: true,
-  },
+const userSchema = new Schema({
   creator: {
     type: Schema.Types.ObjectId,
     ref: "User",
+  },
+  product: {
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   date: {
     type: String,
     required: true,
   },
-  post: {
-    type: Schema.Types.ObjectId,
-    ref: "Post",
+  body: {
+    type: String,
+    required: true,
+  },
+  rate: {
+    type: Number,
+    required: true,
   },
   reply: [
     {
@@ -25,7 +29,6 @@ const viewsSchema = new Schema({
         required: true,
       },
       userId: { type: String, required: true },
-      img: { type: String, required: true },
       name: { type: String, required: true },
       date: {
         type: String,
@@ -35,12 +38,12 @@ const viewsSchema = new Schema({
   ],
 });
 
-var View;
+var User;
 
-if (mongoose.models && mongoose.models.View) {
-  View = mongoose.model("View");
+if (mongoose.models && mongoose.models.User) {
+  User = mongoose.model("Product_comment");
 } else {
-  View = mongoose.model("View", viewsSchema);
+  User = mongoose.model("Product_comment", userSchema);
 }
 
-module.exports = View;
+module.exports = User;

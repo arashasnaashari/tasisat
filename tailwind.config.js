@@ -8,6 +8,8 @@ module.exports = {
     fontFamily: {
       IranianSans: ["IranianSans"],
       Vazir: ["Vazir"],
+      Seogi: ["SegoeUi"],
+      Bmitra: ["BMitra"],
     },
     extend: {
       backgroundImage: (theme) => ({
