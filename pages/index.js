@@ -4,10 +4,8 @@ import Service from "../component/index/service";
 export default function Home() {
   return (
     <>
-      {/* <Landing />
-      <Service /> */}
-
-      <h1>S</h1>
+      <Landing />
+      <Service />
     </>
   );
 }
