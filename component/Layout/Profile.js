@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import Form from "./Form";
-import useUser from "../../utils/useUser";
 import { useRouter } from "next/router";
 // import Popup from "reactjs-popup";
 // import { route } from "next/dist/next-server/server/router";
@@ -12,7 +11,7 @@ const Compo = () => {
   const [phone, setphone] = useState("");
   const [password, setPass] = useState("");
   const [err, setErr] = useState(null);
-  const { user, mutateUser } = useUser();
+  const { user, mutateUser } = useState(false);
   const router = useRouter();
   return (
     <>
