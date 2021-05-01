@@ -1,35 +1,6 @@
-import { useState, useContext } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
-import Contx from "../../context/auth-context";
 const Compo = () => {
-  const router = useRouter();
-
-  const cntx = useContext(Contx);
-  const [open, setOpen] = useState(false);
-  let home = false;
-  let categour = false;
-  let blog = false;
-  let about = false;
-  let dash = false;
-  switch (router.asPath.split("/")[1]) {
-    case "about":
-      about = true;
-      break;
-    case "category":
-      categour = true;
-      break;
-    case "blog":
-      blog = true;
-      break;
-    case "dashboard":
-      dash = true;
-      break;
-    case "":
-      home = true;
-      break;
-  }
   return (
     <>
       <div
@@ -38,19 +9,11 @@ const Compo = () => {
       >
         <a
           href="/"
-          className={
-            home
-              ? `text-black md:text-gray-800 dark:text-white`
-              : `md:hover:text-gray-800 md:dark:hover:text-white`
-          }
+          className={`md:hover:text-gray-800 md:dark:hover:text-white`}
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className={
-                home
-                  ? `stroke-current text-black dark:text-white`
-                  : `stroke-current text-gray-500 `
-              }
+              className={`stroke-current text-gray-500 `}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -67,20 +30,10 @@ const Compo = () => {
           خانه
         </a>
         <Link href="/about">
-          <a
-            className={
-              about
-                ? ` text-black md:text-gray-800 dark:text-white`
-                : `md:hover:text-gray-800 md:dark:hover:text-white`
-            }
-          >
+          <a className={`md:hover:text-gray-800 md:dark:hover:text-white`}>
             <div className="w-8 md:hidden sm:w-11">
               <svg
-                className={
-                  about
-                    ? `stroke-current text-black dark:text-white`
-                    : `stroke-current text-gray-500 `
-                }
+                className={`stroke-current text-gray-500 `}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -95,28 +48,15 @@ const Compo = () => {
               </svg>
             </div>
             خدمات
-            {about && (
-              <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
-            )}
           </a>
         </Link>
 
         <div className=" flex items-center">
           <Link href="/category">
-            <a
-              className={
-                categour
-                  ? `text-black md:text-gray-800 dark:text-white`
-                  : `md:hover:text-gray-800 md:dark:hover:text-white`
-              }
-            >
+            <a className={`md:hover:text-gray-800 md:dark:hover:text-white`}>
               <div className="w-8 md:hidden sm:w-11 mr-2">
                 <svg
-                  className={
-                    categour
-                      ? `stroke-current text-black dark:text-white`
-                      : `stroke-current text-gray-500 `
-                  }
+                  className={`stroke-current text-gray-500 `}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -131,23 +71,16 @@ const Compo = () => {
                 </svg>
               </div>
               فروشگاه
-              {categour && (
-                <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
-              )}
             </a>
           </Link>
 
-          <span className={categour ? `mb-3` : ""}>
+          <span>
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className={
-                  categour
-                    ? `w-5 h-5 hidden md:block stroke-current text-black md:text-gray-800 dark:text-white`
-                    : `w-5 h-5 hidden md:block stroke-current md:hover:text-gray-800 md:dark:hover:text-white`
-                }
+                className={`w-5 h-5 hidden md:block stroke-current md:hover:text-gray-800 md:dark:hover:text-white`}
               >
                 <path
                   fillRule="evenodd"
@@ -159,20 +92,10 @@ const Compo = () => {
           </span>
         </div>
         <Link href="/dashboard">
-          <a
-            className={
-              dash
-                ? `text-black md:text-gray-800 dark:text-white`
-                : `md:hover:text-gray-800 md:dark:hover:text-white`
-            }
-          >
+          <a className={`md:hover:text-gray-800 md:dark:hover:text-white`}>
             <div className="w-8 md:hidden sm:w-11">
               <svg
-                className={
-                  dash
-                    ? `stroke-current text-black dark:text-white`
-                    : `stroke-current text-gray-500 `
-                }
+                className={`stroke-current text-gray-500 `}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -187,27 +110,16 @@ const Compo = () => {
               </svg>
             </div>
             دشبورد
-            {dash && (
-              <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
-            )}
           </a>
         </Link>
 
         <a
           href="/blog"
-          className={
-            blog
-              ? `text-black md:text-gray-800 dark:text-white`
-              : `md:hover:text-gray-800 md:dark:hover:text-white`
-          }
+          className={`md:hover:text-gray-800 md:dark:hover:text-white`}
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className={
-                blog
-                  ? `stroke-current text-black dark:text-white`
-                  : `stroke-current text-gray-500 `
-              }
+              className={`stroke-current text-gray-500 `}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -222,9 +134,6 @@ const Compo = () => {
             </svg>
           </div>
           بلاگ
-          {blog && (
-            <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
-          )}
         </a>
       </div>
     </>

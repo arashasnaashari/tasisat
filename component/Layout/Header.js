@@ -1,6 +1,4 @@
-import Search from "./Search";
 import Nav from "./Nav";
-import Categoury from "./Categoury";
 import Profile from "./Profile";
 import Dark from "./Dark";
 const Header = () => {

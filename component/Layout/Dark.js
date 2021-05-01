@@ -1,7 +1,5 @@
-import { useState } from "react";
 
 const Compo = () => {
-  const [darkMode, setDarkMode] = useState(true);
   return (
     <>
       <button className="text-aras dark:text-aras focus:outline-none">
