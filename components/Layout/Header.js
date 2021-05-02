@@ -16,14 +16,14 @@ const Header = () => {
           </div>
         </div>
         <div className="md:col-span-10 col-span-4">
-          <div className="flex items-center h-28 ">
+          <div className="flex items-center h-28 text-gray-700">
             <Nav />
           </div>
         </div>
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center h-28 justify-end">
             <a href="/">
-              <h1 className="text-2xl font-bold">LOGO</h1>
+              <h1 className="text-2xl font-bold text-black font-Seogi">LOGO</h1>
             </a>
           </div>
         </div>
