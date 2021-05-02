@@ -14,7 +14,7 @@ export default function Home() {
       <About />
       <SliderStore />
       <SliderStore2 />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
